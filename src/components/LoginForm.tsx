@@ -21,6 +21,7 @@ const LoginForm: React.FC = () => {
 
   const onFinish = async (e: FormData) => {
     try {
+      // simulacija login-a kao zamjena za backend
       const { payload } = (await dispatch(getUser())) as PayloadData;
       const isAuthenticated = payload.user_name === e.user_name && payload.password === e.password;
       if (isAuthenticated) {
